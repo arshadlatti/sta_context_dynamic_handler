@@ -1323,7 +1323,10 @@ context_dynamic_handler_t * context_dynamic_handler_sub(context_dynamic_handler_
 			context_dynamic_handler_delete(cdh->sub);
 		cdh->sub = context_dynamic_handler_new();
 		 if (cdh->sub) {
+			 if(cdh->sub_exception)
         cdh->sub->exception = cdh->sub_exception;
+	        else 
+			cdh->sub->exception = cdh->exception;
 		cdh->sub->super = cdh;
     }
 		return cdh->sub;
