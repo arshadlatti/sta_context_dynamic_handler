@@ -19,16 +19,6 @@ deterministic resource cleanup and structured exception handling.
   every exit path — normal return, early `a_return`, or a thrown
   exception. No `goto cleanup`, no leaks when errors propagate.
 
-- **try / catch / final / fail.** Four markers, uniform syntax:
-
-  ```c
-  a_try
-      might_fail();
-  a_catch
-      printf("caught: %s\n", cdh->sub_exception->data);
-  a_final
- ```
-
 ## Quick start
 
 ## The `a_begin` / `a_return` pair
