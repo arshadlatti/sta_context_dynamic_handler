@@ -29,9 +29,7 @@ deterministic resource cleanup and structured exception handling.
   a_final
  ```
 
-
-
-CDH gives C the two things it lacks:
+CDH gives C the two things it lacks
 
 1. **RAII-style cleanup** — register a destructor once, it runs on every
    exit path, including thrown exceptions.
@@ -39,8 +37,6 @@ CDH gives C the two things it lacks:
    explicit propagation, without `setjmp`/`longjmp`.
 
 Everything is stack-local. No threads, no globals, no hidden state.
-
----
 
 ## Quick start
 
