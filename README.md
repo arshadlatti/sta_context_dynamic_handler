@@ -29,15 +29,6 @@ deterministic resource cleanup and structured exception handling.
   a_final
  ```
 
-CDH gives C the two things it lacks
-
-1. **RAII-style cleanup** — register a destructor once, it runs on every
-   exit path, including thrown exceptions.
-2. **try / catch / final / fail** — exceptions with typed payloads and
-   explicit propagation, without `setjmp`/`longjmp`.
-
-Everything is stack-local. No threads, no globals, no hidden state.
-
 ## Quick start
 
 ## The `a_begin` / `a_return` pair
@@ -677,4 +668,3 @@ returns. The exception cannot propagate any further; the function still
 returns 0 to its caller. This is the boundary condition, and it is why
 the top-level function should install an `a_try` if it wants to observe
 errors from its callees.
-```
